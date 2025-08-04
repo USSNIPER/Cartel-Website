@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | Cartel Cheats</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  
+  <!-- Full-page login overlay -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="login-modal">
+      <img src="logo.png" alt="Cartel Cheats Logo" class="login-logo">
+      <h2 class="login-title">Welcome to Cartel Cheats</h2>
+      <button id="login-btn" class="login-btn-google">Login with Google</button>
+      <div class="login-key-section">
+        <input type="password" id="key-input" placeholder="Enter access key" class="login-key-input">
+        <button id="login-key-btn" class="login-btn-key">Login with Key</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nickname setup overlay -->
+  <div id="nickname-overlay" class="nickname-overlay">
+    <div class="nickname-modal">
+      <img src="logo.png" alt="Cartel Cheats Logo" class="nickname-logo">
+      <h2 class="nickname-title">Choose Your Username</h2>
+      <p class="nickname-subtitle">Pick a cool username to display on the site</p>
+      <div class="nickname-input-group">
+        <input type="text" id="username-input" placeholder="Enter username" class="nickname-input">
+        <div id="username-message" class="username-message"></div>
+      </div>
+      <button id="save-username-btn" onclick="saveUsername()" class="save-username-btn">Save Username</button>
+    </div>
+  </div>
+  
+  <header>
+    <nav class="navbar modern-navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rust.html">Rust</a></li>
+        <li><a href="fortnite.html">Fortnite</a></li>
+        <li><a href="valorant.html">Valorant</a></li>
+        <li><a href="payday2.html">Payday 2</a></li>
+        <li><a href="tweaks.html">Tweaks</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="confirmation-container">
+      <div class="confirmation-card">
+        <div class="confirmation-icon">✅</div>
+        <h1 class="confirmation-title">Thank you for purchasing with Cartel Cheats!</h1>
+        
+        <div class="order-details">
+          <h2>Order Confirmation</h2>
+          <div class="order-number-section">
+            <label>Your Order Number:</label>
+            <div class="order-number" id="order-number">cartel-order-0000-0000</div>
+            <button class="copy-btn" onclick="copyOrderNumber()">Copy Order Number</button>
+          </div>
+          
+          <div class="order-items" id="order-items">
+            <!-- Order items will be populated here -->
+          </div>
+          
+          <div class="total-amount">
+            <strong>Total: $<span id="total-amount">0.00</span></strong>
+          </div>
+        </div>
+        
+        <div class="redemption-instructions">
+          <h3>How to Redeem Your Purchase</h3>
+          <p>To redeem your purchase, please create a ticket on our Discord server and share your order number above. Please note that some orders might take up to 24 hours to complete - we are a small team that works very hard to provide you with the best service possible.</p>
+          
+          <div class="action-buttons">
+            <a href="https://discord.gg/Wp5C5Gmr9c" target="_blank" class="discord-btn">
+              <span class="discord-icon">💬</span>
+              Create Support Ticket
+            </a>
+            <a href="index.html" class="home-btn">Return to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Cartel Cheats - #1 Cheat Provider</h3>
+        <p style="color: rgba(255, 255, 255, 0.8); margin: 0;">Buy Undetected Cheats Here! Top Quality And Frequently Updated Products!</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rust.html">Rust</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="payday2.html">Payday 2</a></li>
+          <li><a href="tweaks.html">Tweaks</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Socials</h3>
+        <ul>
+          <li><a href="https://discord.gg/Wp5C5Gmr9c" target="_blank">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Cartel Cheats. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script src="js/discord-webhook.js"></script>
+  <script src="js/confirmation.js"></script>
+  <script src="bg-anim.js"></script>
+</body>
+</html>
