@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartel Cheats</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div id="cart-fab" class="cart-fab"><a href="cart.html" class="cart-fab-link"><span class="cart-fab-icon">🛒</span><span id="cart-count" class="cart-fab-count">0</span></a></div>
+  <!-- Full-page login overlay -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="login-modal">
+      <img src="logo.png" alt="Cartel Cheats Logo" class="login-logo">
+      <h2 class="login-title">Welcome to Cartel Cheats</h2>
+      <button id="login-btn" class="login-btn-google">Login with Google</button>
+      <div class="login-key-section">
+        <input type="password" id="key-input" placeholder="Enter access key" class="login-key-input">
+        <button id="login-key-btn" class="login-btn-key">Login with Key</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nickname setup overlay -->
+  <div id="nickname-overlay" class="nickname-overlay">
+    <div class="nickname-modal">
+      <img src="logo.png" alt="Cartel Cheats Logo" class="nickname-logo">
+      <h2 class="nickname-title">Choose Your Username</h2>
+      <p class="nickname-subtitle">Pick a cool username to display on the site</p>
+      <div class="nickname-input-group">
+        <input type="text" id="username-input" placeholder="Enter username" class="nickname-input">
+        <div id="username-message" class="username-message"></div>
+      </div>
+      <button id="save-username-btn" onclick="saveUsername()" class="save-username-btn">Save Username</button>
+    </div>
+  </div>
+  <header>
+    <nav class="navbar modern-navbar">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="rust.html">Rust</a></li>
+        <li><a href="fortnite.html">Fortnite</a></li>
+        <li><a href="valorant.html">Valorant</a></li>
+        <li><a href="payday2.html">Payday 2</a></li>
+        <li><a href="tweaks.html">Tweaks</a></li>
+      </ul>
+    </nav>
+    <!-- Modern user greeting area -->
+    <div id="user-greeting-area" class="user-greeting-area">
+      <span id="user-greeting"></span>
+      <span id="user-logo-circle" class="user-logo-circle"><img src="logo.png" alt="User Logo"></span>
+    </div>
+  </header>
+    
+    <!-- Typewriter Header Section (centered between nav and products) -->
+    <div id="typewriter-section" style="text-align:center; padding: 60px 0;">
+        <h1 id="typewriter-header" style="font-size:3rem; font-weight:700; margin: 0;"></h1>
+        <p id="typewriter-desc" style="font-size:1.3rem; margin: 20px 0 0 0;"></p>
+    </div>
+    
+  <main>
+    <section class="games-grid">
+      <a href="rust.html" class="game-card-link">
+        <div class="game-card">
+          <img src="rust-choose.png" alt="Rust" class="game-card-img">
+          <div class="game-card-lower">
+            <h2 class="game-card-title">Rust</h2>
+            <div class="game-card-meta">
+              <span class="game-card-products">6 Products</span>
+              <span class="game-card-range">$6 - $50</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="fortnite.html" class="game-card-link">
+        <div class="game-card">
+          <img src="fortnite-choose.png" alt="Fortnite" class="game-card-img">
+          <div class="game-card-lower">
+            <h2 class="game-card-title">Fortnite</h2>
+            <div class="game-card-meta">
+              <span class="game-card-products">4 Products</span>
+              <span class="game-card-range">$6 - $50</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="valorant.html" class="game-card-link">
+        <div class="game-card">
+          <img src="valorant-choose.webp" alt="Valorant" class="game-card-img">
+          <div class="game-card-lower">
+            <h2 class="game-card-title">Valorant</h2>
+            <div class="game-card-meta">
+              <span class="game-card-products">4 Products</span>
+              <span class="game-card-range">$7 - $50</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="payday2.html" class="game-card-link">
+        <div class="game-card">
+          <img src="payday2-choose.png" alt="Payday 2" class="game-card-img">
+          <div class="game-card-lower">
+            <h2 class="game-card-title">Payday 2</h2>
+            <div class="game-card-meta">
+              <span class="game-card-products">1 Product</span>
+              <span class="game-card-range">$1.99</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="tweaks.html" class="game-card-link">
+        <div class="game-card">
+          <img src="tweaks-choose.png" alt="Tweaks" class="game-card-img">
+          <div class="game-card-lower">
+            <h2 class="game-card-title">Tweaks</h2>
+            <div class="game-card-meta">
+              <span class="game-card-products">1 Service</span>
+              <span class="game-card-range">$5.00</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </section>
+    
+    <!-- Reviews Carousel Section -->
+    <section class="reviews-carousel-section">
+      <h2 class="reviews-header">Positive Reviews</h2>
+      <div class="reviews-carousel">
+        <div class="review-item">
+          <div class="review-author">Big Cat</div>
+          <div class="review-text">Such a nice guy and helped me +Rep</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">saimipolicq</div>
+          <div class="review-text">+Rep really fast service And good cheese</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">mohannad</div>
+          <div class="review-text">+Rep bought nitro snd rust nfa account rly fast delivery</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">saimipolicq</div>
+          <div class="review-text">nfa account fast delivery and good help</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">Pro_gamer</div>
+          <div class="review-text">payday 2 trainer fast delivery and very good support, very cheap and very good cheese</div>
+        </div>
+        <!-- Duplicate items for seamless loop -->
+        <div class="review-item">
+          <div class="review-author">Big Cat</div>
+          <div class="review-text">Such a nice guy and helped me +Rep</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">saimipolicq</div>
+          <div class="review-text">+Rep really fast service And good cheese</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">mohannad</div>
+          <div class="review-text">+Rep bought nitro snd rust nfa account rly fast delivery</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">saimipolicq</div>
+          <div class="review-text">+Repnfa account fast delivery and good help</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">Pro_gamer</div>
+          <div class="review-text">payday 2 trainer fast delivery and very good support, very cheap and very good cheese</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="discord-invite-bar">
+    <span class="discord-invite-icon">&#128172;</span>
+    <a href="https://discord.gg/Wp5C5Gmr9c" class="discord-invite-link" target="_blank" rel="noopener" aria-label="Join our Discord">Join our Discord</a>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Cartel Cheats - #1 Cheat Provider</h3>
+        <p style="color: rgba(255, 255, 255, 0.8); margin: 0;">Buy Undetected Cheats Here! Top Quality And Frequently Updated Products!</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rust.html">Rust</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="payday2.html">Payday 2</a></li>
+          <li><a href="tweaks.html">Tweaks</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Socials</h3>
+        <ul>
+          <li><a href="https://discord.gg/Wp5C5Gmr9c" target="_blank">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Cartel Cheats. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script src="bg-anim.js"></script>
+</body>
+</html>
