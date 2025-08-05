@@ -38,18 +38,25 @@
     </div>
   </div>
   
-  <header>
-    <nav class="navbar modern-navbar">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="rust.html" class="active" aria-current="page">Rust</a></li>
-        <li><a href="fortnite.html">Fortnite</a></li>
-        <li><a href="valorant.html">Valorant</a></li>
-        <li><a href="payday2.html">Payday 2</a></li>
-        <li><a href="tweaks.html">Tweaks</a></li>
-      </ul>
+  <header class="pill-header">
+    <nav class="pill-navbar">
+      <div class="pill-nav-container">
+        <a href="index.html" class="pill-nav-item">Home</a>
+        <a href="rust.html" class="pill-nav-item active">Rust</a>
+        <a href="fortnite.html" class="pill-nav-item">Fortnite</a>
+        <a href="valorant.html" class="pill-nav-item">Valorant</a>
+        <a href="payday2.html" class="pill-nav-item">Payday 2</a>
+        <a href="tweaks.html" class="pill-nav-item">Tweaks</a>
+        <div class="nav-indicator"></div>
+      </div>
     </nav>
   </header>
+
+  <!-- User greeting pill on top right -->
+  <div id="user-greeting-area" class="user-pill">
+    <span id="user-greeting"></span>
+    <span id="user-logo-circle" class="user-logo-circle"><img src="logo.png" alt="User Logo"></span>
+  </div>
   <main>
     <section class="game-section">
       <h2 class="rust-heading">🦀 Rust Products</h2>
@@ -94,7 +101,7 @@
           <h3>Non Full Access Account</h3>
           <p>Rust account with limited access.</p>
           <span class="buy-price">$6</span>
-          <div class="out-of-stock-message" style="color: #ff4d4d; font-weight: bold; margin-top: 10px;">Out of stock, restocking soon...</div>
+          <div class="in-stock-message">✅ In Stock</div>
           <button class="add-cart-btn" data-name="Rust Non Full Access Account" data-price="6">Add to Cart</button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { getCart } from './cart.js';
+import { getCart } from './main.js';
 
 export function showLoginOverlay() {
     const overlay = document.getElementById('login-overlay');
@@ -70,12 +70,17 @@ export function showAddToCartNotification(productName) {
 }
 
 export function renderCartPage() {
+    console.log('[renderCartPage] Starting cart page render');
     const cart = getCart();
+    console.log('[renderCartPage] Got cart:', cart);
     const cartItemsContainer = document.getElementById('cart-page-items');
     const cartPageTotal = document.getElementById('cart-page-total');
     const finalTotal = document.getElementById('final-total');
 
-    if (!cartItemsContainer) return;
+    if (!cartItemsContainer) {
+        console.log('[renderCartPage] ERROR: cart-page-items container not found');
+        return;
+    }
 
     cartItemsContainer.innerHTML = '';
     

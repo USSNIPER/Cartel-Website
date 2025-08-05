@@ -36,32 +36,36 @@
       <button id="save-username-btn" onclick="saveUsername()" class="save-username-btn">Save Username</button>
     </div>
   </div>
-  <header>
-    <nav class="navbar modern-navbar">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-        <li><a href="rust.html">Rust</a></li>
-        <li><a href="fortnite.html">Fortnite</a></li>
-        <li><a href="valorant.html">Valorant</a></li>
-        <li><a href="payday2.html">Payday 2</a></li>
-        <li><a href="tweaks.html">Tweaks</a></li>
-      </ul>
+  <header class="pill-header">
+    <nav class="pill-navbar">
+      <div class="pill-nav-container">
+        <a href="index.html" class="pill-nav-item active">Home</a>
+        <a href="rust.html" class="pill-nav-item">Rust</a>
+        <a href="fortnite.html" class="pill-nav-item">Fortnite</a>
+        <a href="valorant.html" class="pill-nav-item">Valorant</a>
+        <a href="payday2.html" class="pill-nav-item">Payday 2</a>
+        <a href="tweaks.html" class="pill-nav-item">Tweaks</a>
+        <div class="nav-indicator"></div>
+      </div>
     </nav>
-    <!-- Modern user greeting area -->
-    <div id="user-greeting-area" class="user-greeting-area">
-      <span id="user-greeting"></span>
-      <span id="user-logo-circle" class="user-logo-circle"><img src="logo.png" alt="User Logo"></span>
-    </div>
   </header>
+
+  <!-- User greeting pill on top right -->
+  <div id="user-greeting-area" class="user-pill">
+    <span id="user-greeting"></span>
+    <span id="user-logo-circle" class="user-logo-circle"><img src="logo.png" alt="User Logo"></span>
+  </div>
     
     <!-- Typewriter Header Section (centered between nav and products) -->
-    <div id="typewriter-section" style="text-align:center; padding: 60px 0;">
-        <h1 id="typewriter-header" style="font-size:3rem; font-weight:700; margin: 0;"></h1>
-        <p id="typewriter-desc" style="font-size:1.3rem; margin: 20px 0 0 0;"></p>
+    <div id="typewriter-section" style="text-align:center; padding: 0px 0 20px 0; width: 100%; max-width: 1200px; margin: 160px auto 0 auto;">
+        <h1 id="typewriter-header" style="font-size:3rem; font-weight:700; margin: 0 auto 20px auto; color: white; text-align: center; width: 100%;">Welcome To Cartel Cheats</h1>
+        <p id="typewriter-desc" style="font-size:1.1rem; margin: 0 auto; color: rgba(255, 255, 255, 0.8); text-align: center; width: 100%; white-space: nowrap; overflow: hidden;">Buy Undetected Cheats Here! Browse Our Top Quality Cheats Below!</p>
     </div>
     
   <main>
-    <section class="games-grid">
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="games-grid">
       <a href="rust.html" class="game-card-link">
         <div class="game-card">
           <img src="rust-choose.png" alt="Rust" class="game-card-img">
@@ -122,6 +126,7 @@
           </div>
         </div>
       </a>
+        </div>
     </section>
     
     <!-- Reviews Carousel Section -->

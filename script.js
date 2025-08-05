@@ -1,5 +1,25 @@
 console.log('script.js loaded and executing');
 
+// Typewriter function with cursor effect
+function typeWriter(element, text, speed = 80, callback) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor">|</span>';
+            i++;
+            setTimeout(type, speed);
+        } else {
+            element.innerHTML = text; // Remove cursor when done
+            if (callback) {
+                setTimeout(callback, 300);
+            }
+        }
+    }
+    type();
+}
+
 // Global variables
 let auth = null;
 let provider = null;
@@ -76,6 +96,10 @@ async function initializeFirebase() {
           console.log('[MIGRATE] guest_cart ->', userCartKey, guestCart);
         }
         currentCartKey = userCartKey;
+        // Update the cart key in main.js
+        if (window.setCartKey) {
+          window.setCartKey(currentCartKey);
+        }
 
         // Check if user has a saved username
         const savedUsername = localStorage.getItem(`username_${user.uid}`);
@@ -96,10 +120,18 @@ async function initializeFirebase() {
         if (keyUser) {
           const parsedKeyUser = JSON.parse(keyUser);
           currentCartKey = `cart_${parsedKeyUser.uid}`;
+          // Update the cart key in main.js
+          if (window.setCartKey) {
+            window.setCartKey(currentCartKey);
+          }
           hideLoginOverlay();
           updateUserGreeting(parsedKeyUser);
         } else {
           currentCartKey = 'cart_guest';
+          // Update the cart key in main.js
+          if (window.setCartKey) {
+            window.setCartKey(currentCartKey);
+          }
           showLoginOverlay(); // Show login overlay if no user (Firebase or key) is logged in
           updateUserGreeting(null);
         }
@@ -446,6 +478,33 @@ function showAddToCartNotification(productName) {
 // Initialize when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
   console.log('[DOMContentLoaded] Starting initialization');
+
+  // Initialize typewriter effect on home page
+  console.log('[DOMContentLoaded] Looking for typewriter elements...');
+  const header = document.getElementById('typewriter-header');
+  const desc = document.getElementById('typewriter-desc');
+  console.log('[DOMContentLoaded] Header element:', header);
+  console.log('[DOMContentLoaded] Desc element:', desc);
+  
+  if (header && desc) {
+    console.log('[DOMContentLoaded] Found typewriter elements, starting effect in 1 second...');
+    
+    // Wait a moment to ensure everything is loaded
+    setTimeout(() => {
+      console.log('[DOMContentLoaded] Starting typewriter effect NOW');
+      header.innerHTML = '';
+      desc.innerHTML = '';
+      
+      typeWriter(header, 'Welcome To Cartel Cheats', 100, () => {
+        console.log('[DOMContentLoaded] First line complete, starting second line...');
+        setTimeout(() => {
+          typeWriter(desc, 'Buy Undetected Cheats Here! Browse Our Top Quality Cheats Below!', 60);
+        }, 800);
+      });
+    }, 1000);
+  } else {
+    console.log('[DOMContentLoaded] ERROR: Typewriter elements not found!', { header, desc });
+  }
 
   // Smooth scroll for nav links
   document.querySelectorAll('.nav-links a').forEach(link => {

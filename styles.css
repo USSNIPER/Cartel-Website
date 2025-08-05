@@ -16,14 +16,122 @@ main {
     flex: 1;
 }
 
-/* Header sticky positioning */
-header {
-    position: sticky;
-    top: 0;
+/* Pill Header Design */
+.pill-header {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
-    background: rgba(24, 24, 40, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pill-navbar {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: pillGlow 4s ease-in-out infinite;
+}
+
+.pill-nav-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 4px;
+}
+
+.pill-nav-item {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.pill-nav-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.pill-nav-item.active {
+    color: white;
+    background: linear-gradient(135deg, #7b5fff, #00ffd0);
+    box-shadow: 0 4px 15px rgba(123, 95, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Hover animations */
+.pill-navbar:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Glow effect animation */
+@keyframes pillGlow {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(123, 95, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 255, 208, 0.2);
+    }
+}
+
+/* User greeting pill on top right */
+.user-pill {
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 8px 16px;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: pillGlow 4s ease-in-out infinite;
+}
+
+.user-pill:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.user-pill #user-greeting {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.user-logo-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.user-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Canvas background */
@@ -34,73 +142,6 @@ header {
     width: 100%;
     height: 100%;
     z-index: -1;
-}
-
-/* Navbar styles - Keeping the modern look */
-.navbar {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    position: relative;
-}
-
-.modern-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    padding-bottom: 4px;
-}
-
-.nav-links a:hover {
-    color: #7b5fff;
-}
-
-.nav-links a.active {
-    color: #00ffd0;
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #7b5fff, #00ffd0);
-    animation: lineGlow 2s infinite;
-}
-
-@keyframes lineGlow {
-    0% {
-        opacity: 0.5;
-        box-shadow: 0 0 5px rgba(123, 95, 255, 0.3);
-    }
-    50% {
-        opacity: 1;
-        box-shadow: 0 0 15px rgba(0, 255, 208, 0.5);
-    }
-    100% {
-        opacity: 0.5;
-        box-shadow: 0 0 5px rgba(123, 95, 255, 0.3);
-    }
 }
 
 /* Cart FAB - Keeping the modern look */
@@ -138,14 +179,66 @@ header {
     font-weight: bold;
 }
 
-/* Games grid */
+/* Typewriter Section - Clean styling with adjusted spacing for fixed header */
+#typewriter-section {
+    margin-top: 180px; /* Move content down to clear the header */
+    padding-bottom: 80px; /* Add bottom padding for more height */
+}
+
+#typewriter-header {
+    color: white !important;
+    line-height: 1.2;
+}
+
+#typewriter-desc {
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.6;
+}
+
+/* Typing cursor animation */
+.typing-cursor {
+    color: #00ffd0;
+    animation: blink 1s infinite;
+    font-weight: normal;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Products Section - Simplified with more height */
+.products-section {
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh; /* Ensure minimum height */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Games grid - Clean */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0;
 }
 
 .game-card-link {
@@ -158,8 +251,9 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     position: relative;
+    backdrop-filter: blur(10px);
 }
 
 .game-card::before {
@@ -175,8 +269,8 @@ header {
 }
 
 .game-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     border-color: rgba(123, 95, 255, 0.3);
 }
 
@@ -554,31 +648,7 @@ footer {
     }
 }
 
-/* User greeting area */
-.user-greeting-area {
-    display: none;
-    align-items: center;
-    gap: 1rem;
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffffff;
-}
-
-.user-logo-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.user-logo-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* Old user greeting styles removed - using pill design now */
 
 /* Login overlay */
 .login-overlay {
@@ -703,9 +773,11 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .cart-item {
@@ -1028,9 +1100,11 @@ footer {
 
 /* Game sections */
 .game-section {
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .game-desc {
@@ -1347,9 +1421,11 @@ footer {
 
 /* Game sections */
 .game-section {
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .game-desc {
@@ -1628,9 +1704,11 @@ footer {
 
 /* Game sections */
 .game-section {
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .game-desc {
@@ -1909,9 +1987,11 @@ footer {
 
 /* Game sections */
 .game-section {
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .game-desc {
@@ -2190,9 +2270,11 @@ footer {
 
 /* Game sections */
 .game-section {
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .game-desc {
@@ -2471,9 +2553,11 @@ footer {
 
 /* Game sections */
 .game-section {
-    padding: 2rem;
+    padding: 4rem 2rem 6rem 2rem; /* Increased padding for more height */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 140px; /* Move content down to fill the empty space */
+    min-height: 80vh; /* Ensure minimum height */
 }
 
 .game-desc {
@@ -2936,24 +3020,38 @@ footer {
     margin-top: 10px;
 }
 
-/* Reviews Carousel Section */
+/* Reviews Carousel Section - Enhanced */
 .reviews-carousel-section {
-    padding: 3rem 0;
+    padding: 5rem 0;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(123, 95, 255, 0.05) 50%, rgba(0, 255, 208, 0.03) 100%);
+    margin-top: 4rem;
+    position: relative;
+}
+
+.reviews-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(123, 95, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .reviews-header {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     color: #ffffff;
-    margin-bottom: 2rem;
-    background: linear-gradient(135deg, #00d4ff 0%, #7b5fff 100%);
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #00d4ff 0%, #7b5fff 50%, #00ffd0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+    z-index: 1;
 }
 
 .reviews-carousel {
@@ -2972,15 +3070,17 @@ footer {
 }
 
 .review-item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    min-width: 300px;
-    max-width: 400px;
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    min-width: 320px;
+    max-width: 420px;
+    backdrop-filter: blur(20px);
     flex-shrink: 0;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .review-item:hover {
@@ -3002,9 +3102,104 @@ footer {
     line-height: 1.4;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    #typewriter-section {
+        padding: 2rem 1rem 1rem 1rem !important;
+    }
+    
+    #typewriter-header {
+        font-size: 2.5rem !important;
+    }
+    
+    #typewriter-desc {
+        font-size: 1.1rem !important;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .products-section {
+        padding: 2rem 1rem;
+    }
+    
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #typewriter-header {
+        font-size: 2rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+    }
+    
+    /* Mobile responsiveness for pill header */
+    .pill-navbar {
+        padding: 6px;
+        border-radius: 40px;
+    }
+    
+    .pill-nav-item {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .pill-nav-container {
+        gap: 2px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pill-nav-item {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .pill-navbar {
+        padding: 4px;
+    }
+    
+    .user-pill {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+    }
+    
+    .user-pill #user-greeting {
+        font-size: 0.8rem;
+    }
+    
+    .user-logo-circle {
+        width: 24px;
+        height: 24px;
     }
 }

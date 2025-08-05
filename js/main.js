@@ -8,6 +8,7 @@ let cartReady = true; // Cart should be ready immediately for guests
 // Cart functions
 function getCart() {
     const cart = JSON.parse(localStorage.getItem(currentCartKey) || '[]');
+    console.log('[getCart] key:', currentCartKey, 'cart:', cart);
     return cart;
 }
 
@@ -133,7 +134,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         desc.innerHTML = '';
         typeWriter(header, 'Welcome To Cartel Cheats', 90, () => {
             setTimeout(() => {
-                typeWriter(desc, 'Buy Undetected Cheats Here! Top Quality And Frequently Updated Products! Browse Our Options Below!', 50);
+                typeWriter(desc, 'Buy Undetected Cheats Here! Browse Our Top Quality Cheats Below!', 50);
             }, 500);
         });
     }
@@ -151,3 +152,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     
     console.log('[DOMContentLoaded] Initialization complete');
 });
+
+// Export functions for other modules
+export { getCart };
