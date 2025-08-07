@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valorant Cheats | Cartel Cheats</title>
+  <title>Counter Strike 2 Cheats | Cartel Cheats</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
   <canvas id="bg-canvas"></canvas>
-  <div id="cart-fab" class="cart-fab"><a href="cart.html" style="color:inherit;text-decoration:none;"><span class="cart-fab-icon">🛒</span><span id="cart-count" class="cart-fab-count">0</span></a></div>
+  <div id="cart-fab" class="cart-fab"><a href="cart.html" class="cart-fab-link"><span class="cart-fab-icon">🛒</span><span id="cart-count" class="cart-fab-count">0</span></a></div>
   
   <!-- Full-page login overlay -->
   <div id="login-overlay" class="login-overlay">
@@ -44,8 +44,8 @@
         <a href="index.html" class="pill-nav-item">Home</a>
         <a href="rust.html" class="pill-nav-item">Rust</a>
         <a href="fortnite.html" class="pill-nav-item">Fortnite</a>
-        <a href="valorant.html" class="pill-nav-item active">Valorant</a>
-        <a href="cs2.html" class="pill-nav-item">Counter Strike 2</a>
+        <a href="valorant.html" class="pill-nav-item">Valorant</a>
+        <a href="cs2.html" class="pill-nav-item active">Counter Strike 2</a>
         <a href="payday2.html" class="pill-nav-item">Payday 2</a>
         <a href="tweaks.html" class="pill-nav-item">Tweaks</a>
         <div class="nav-indicator"></div>
@@ -58,53 +58,35 @@
     <span id="user-greeting"></span>
     <span id="user-logo-circle" class="user-logo-circle"><img src="logo.png" alt="User Logo"></span>
   </div>
+
   <main>
+    <section class="game-header">
+      <div class="game-header-content">
+        <h1 class="game-title"></h1>
+
+        <p class="game-subtitle"></p>
+      </div>
+    </section>
+
     <section class="game-section">
-      <h2 class="valorant-heading">🎮 Valorant Products</h2>
-      <p class="game-desc">Choose your Valorant product below. All purchases are secure and instant.</p>
+      <h2 class="cs2-heading">🔫 Counter Strike 2</h2>
       <div class="products-grid">
         <div class="product-card">
           <h3>Lifetime Cheats</h3>
-          <p>Unlimited access to Valorant cheats.</p>
-          <span class="buy-price">$50</span>
-          <div class="out-of-stock-message" style="color: #ff4d4d; font-weight: bold; margin-top: 10px;">Out of stock, restocking soon...</div>
-          <button class="add-cart-btn" data-name="Valorant Lifetime Cheats" data-price="50">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h3>Daily Cheats</h3>
-          <p>24 hours access to Valorant cheats.</p>
-          <span class="buy-price">$7</span>
-          <div class="out-of-stock-message" style="color: #ff4d4d; font-weight: bold; margin-top: 10px;">Out of stock, restocking soon...</div>
-          <button class="add-cart-btn" data-name="Valorant Daily Cheats" data-price="7">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h3>Weekly Cheats</h3>
-          <p>7 days access to Valorant cheats.</p>
-          <span class="buy-price">$16</span>
-          <div class="out-of-stock-message" style="color: #ff4d4d; font-weight: bold; margin-top: 10px;">Out of stock, restocking soon...</div>
-          <button class="add-cart-btn" data-name="Valorant Weekly Cheats" data-price="16">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h3>Monthly Cheats</h3>
-          <p>30 days access to Valorant cheats.</p>
-          <span class="buy-price">$26</span>
-          <div class="out-of-stock-message" style="color: #ff4d4d; font-weight: bold; margin-top: 10px;">Out of stock, restocking soon...</div>
-          <button class="add-cart-btn" data-name="Valorant Monthly Cheats" data-price="26">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h3>Skin Changer</h3>
-          <p>Changes your weapon skin to whatever you want</p>
-          <span class="buy-price">$15</span>
-          <div class="out-of-stock-message" style="color: #ff4d4d; font-weight: bold; margin-top: 10px;">Out of stock, restocking soon...</div>
-          <button class="add-cart-btn" data-name="Valorant Skin Changer" data-price="15">Add to Cart</button>
+          <p>Dominate CS2 with our premium lifetime cheat featuring advanced aimbot, wallhack, and ESP features. Completely undetected with regular updates to ensure you stay ahead of the competition.</p>
+          <span class="buy-price">$3.00</span>
+          <div class="in-stock-message">✅ In Stock</div>
+          <button class="add-cart-btn" onclick="addToCart('Lifetime Cheats', 3.00, 1)">Add to Cart</button>
         </div>
       </div>
     </section>
   </main>
+
   <div class="discord-invite-bar">
     <span class="discord-invite-icon">&#128172;</span>
     <a href="https://discord.gg/Wp5C5Gmr9c" class="discord-invite-link" target="_blank" rel="noopener" aria-label="Join our Discord">Join our Discord</a>
   </div>
+
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -118,6 +100,7 @@
           <li><a href="rust.html">Rust</a></li>
           <li><a href="fortnite.html">Fortnite</a></li>
           <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="cs2.html">Counter Strike 2</a></li>
           <li><a href="payday2.html">Payday 2</a></li>
           <li><a href="tweaks.html">Tweaks</a></li>
           <li><a href="cart.html">Cart</a></li>
@@ -134,7 +117,7 @@
       <p>&copy; 2024 Cartel Cheats. All rights reserved.</p>
     </div>
   </footer>
-  <script src="script.js?v=2025"></script>
-  <script src="bg-anim.js?v=2025"></script>
+
+  <script src="script.js"></script>
+  <script src="bg-anim.js"></script>
 </body>
-</html>
